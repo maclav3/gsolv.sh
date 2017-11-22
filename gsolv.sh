@@ -17,6 +17,7 @@ if [ $#  -lt 4 ]; then
 fi
 
 DIRNAME=$3 #The directory that we will be working in
+mkdir -p $DIRNAME
 cd $DIRNAME
 
 EM_FLEXIBLE_MDP="mdp/em_flexible.mdp" #MDP for flexible EM
