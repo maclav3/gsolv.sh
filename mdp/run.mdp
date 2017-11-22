@@ -1,6 +1,6 @@
 ; we'll use the sd integrator with 500000 time steps (1ns)
 integrator               = sd
-nsteps                   = 5000
+nsteps                   = 500000
 dt			 = 0.002
 nstenergy                = 1000
 nstlog                   = 5000

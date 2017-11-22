@@ -19,10 +19,10 @@ fi
 DIRNAME=$3 #The directory that we will be working in
 cd $DIRNAME
 
-EM_FLEXIBLE_MDP="em_flexible.mdp" #MDP for flexible EM
-EM_MDP="em.mdp" #MDP for regular EM
-EQUI_MDP="equi.mdp" #MDP for the equilibriation run
-FEP_RUN_MDP="run.mdp" #MDP for the FEP run
+EM_FLEXIBLE_MDP="mdp/em_flexible.mdp" #MDP for flexible EM
+EM_MDP="mdp/em.mdp" #MDP for regular EM
+EQUI_MDP="mdp/equi.mdp" #MDP for the equilibriation run
+FEP_RUN_MDP="mdp/run.mdp" #MDP for the FEP run
 
 TOPOLOGY_FILE=$1 #Topology, including water (solvation free energy)
 CONFIGURATION_FILE=$2 #Configuration, incl. water
