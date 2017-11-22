@@ -1,0 +1,41 @@
+; we'll use the sd integrator with 500000 time steps (1ns)
+integrator               = sd
+nsteps                   = 5000
+dt			 = 0.002
+nstenergy                = 1000
+nstlog                   = 5000
+; turn off trajectory writing
+nstxout			 = 0
+nstvout			 = 0
+; cut-offs at 1nm
+rlist                    = 1.0
+nstlist                  = 10
+coulombtype              = pme
+vdw-type                 = cut-off
+rvdw                     = 1.0
+constraints              = all-bonds
+; set temperature to 300K
+tcoupl                   = v-rescale
+tc-grps                  = system
+tau-t                    = 0.2 
+ref-t                    = 298 ;25*C
+; and pressure to 1 bar
+pcoupl			 = parrinello-rahman
+ref-p			 = 1
+compressibility		 = 4.5e-5
+tau-p			 = 5 
+; and set the free energy parameters
+free-energy              = yes 
+couple-moltype           = $MOLECULE$
+init-lambda              = $LAMBDA$
+; these 'soft-core' parameters make sure we never get overlapping 
+; charges as lambda goes to 0
+sc-power                 = 1    
+sc-sigma                 = 0.3  
+sc-alpha                 = 1.0          
+; we still want the molecule to interact with itself at lambda=0
+couple-intramol          = no   
+couple-lambda1           = vdwq
+couple-lambda0           = none
+foreign-lambda           = $ALL_LAMBDAS$
+

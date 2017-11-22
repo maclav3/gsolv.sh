@@ -1,0 +1,28 @@
+; we'll use the md integrator with 50000 time steps (100ps)
+integrator               = md
+nsteps                   = 50000
+dt			 = 0.002
+nstenergy                = 100
+nstxout	                 = 1000
+nstvout	                 = 1000
+; cut-offs at 1nm
+rlist                    = 1.0
+nstlist                  = 10
+coulombtype              = pme
+vdw-type                 = cut-off
+rvdw                     = 1.0
+constraints              = all-bonds
+; set temperature to 300K
+tcoupl                   = v-rescale
+tc-grps                  = system
+tau-t                    = 0.2 
+ref-t                    = 298.15 ;25*C
+; and pressure to 1 bar
+pcoupl			 = berendsen
+ref-p			 = 1
+compressibility		 = 4.5e-5
+tau-p			 = 5 
+; generate initial velocities
+gen-vel                  = yes
+gen-temp                 = 300
+
