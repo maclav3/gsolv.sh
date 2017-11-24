@@ -31,12 +31,11 @@ MOLECULE=$4 #Molecule name, as defined in the topology (for couple-moltype in FE
 
 if test -z "$5"
 then
-MAXWARN=0
+        MAXWARN=0
 #ideally, MAXWARN should be equal to the number of altered atomtypes
 #in the topology (to deal with grompp's warnings about overriding atom types)
-exit 1
 else
-MAXWARN=$5
+        MAXWARN=$5
 fi
 
 find . -name "\#*\#" -delete #remove temp files, if any
